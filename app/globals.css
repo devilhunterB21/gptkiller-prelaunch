@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{ --hacker:#00ff88; --accent:#ff004c; --cyan:#00eaff; }
+*{box-sizing:border-box}
+body{ @apply bg-black text-white font-mono; }
+
+.glitch-text{ color:var(--hacker); text-shadow:2px 0 var(--accent), -2px 0 var(--cyan); animation:glitch 1.2s infinite linear; }
+.hero-video{ max-height:70vh; width:100%; border-radius:12px; filter:contrast(1.05) saturate(1.05); }
+.text-hacker{ color:var(--hacker); }
+.bg-hacker{ background:var(--hacker); color:#000; }
+.border-hacker{ border-color: rgba(0,255,136,.4); }
+
+@keyframes glitch{
+  0%{ text-shadow:2px 0 var(--accent), -2px 0 var(--cyan); transform:translateX(0); }
+  33%{ text-shadow:-2px 0 var(--accent), 2px 0 var(--cyan); transform:translateX(1px); }
+  66%{ text-shadow:2px 0 var(--accent), -2px 0 var(--cyan); transform:translateX(-1px); }
+  100%{ text-shadow:2px 0 var(--accent), -2px 0 var(--cyan); transform:translateX(0); }
+}
